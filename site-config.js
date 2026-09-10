@@ -1,321 +1,382 @@
 window.FORM_CONFIG = {
-  product: {
-    code: 'feelings-zip',
-    name: 'feelings.zip',
-    badge: 'interactive zipped archive & swipeable photocard confession',
-    price: 15000,
-    priceFormatted: 'Rp 15.000',
-    tagline: 'feelings.zip — interactive zipped archive confession with 3 build-up drawers, 4 swipeable photocard confession modals, commemorative grid, and instant Telegram redirect.'
+  "product": {
+    "code": "feelings-zip",
+    "name": "feelings.zip",
+    "badge": "interactive winrar confession folder",
+    "price": 15000,
+    "priceFormatted": "Rp 15.000",
+    "tagline": "interactive nostalgic winrar/archive confession folder with opening screen, 3 reveal pills, 4 swipeable pop-up photo cards, the big question, and interactive yes/no responses with telegram copy."
   },
-  context: {
-    formCode: 'ZIP-ORD',
-    edition: '2026 Zipped Confession Archive Edition',
-    description: 'Feelings.zip is an aesthetic mobile-first confession website styled like a zipped feelings package. It features an unzipping intro, 3 build-up interactive answer drawers, 4 swipeable high-res photocard confession cards with popups, and a proposal screen with direct Telegram answer copying.'
+  "context": {
+    "formCode": "feelings-zip-2026-09",
+    "motif": "📦",
+    "mediaDescription": "kirim 4 foto untuk 4 confession cards + 1 lagu latar (song.mp3) atau link spotify"
   },
-  motif: '📦',
-  mediaDescription: '4 Foto (Photocard 01-04) + 1 File Musik MP3',
-  theme: {
-    name: 'feelings-zip',
-    palette: ['#18181B', '#27272A', '#EC4899', '#FDF2F8', '#38BDF8', '#C6FF3D']
+  "theme": {
+    "palette": {
+      "accent": "#ff3d9a",
+      "accentRgb": "255, 61, 154",
+      "accentDeep": "#d91b75",
+      "paper": "#18181b",
+      "ink": "#fff7ed",
+      "muted": "#a1a1aa",
+      "border": "#27272a",
+      "tint": "rgba(255, 61, 154, 0.15)"
+    },
+    "fontPreset": "fraunces-karla"
   },
-  sections: [
+  "sections": [
     {
-      id: 'core_identity',
-      number: '02',
-      title: 'Core Identity & Telegram Redirection',
-      description: 'Names, date stamp, and Telegram destination for automated answer copying.',
-      fields: [
+      "id": "sec_core",
+      "title": "Core Identity & Target",
+      "subtitle": "nama pengirim, penerima, tanggal dan kontak telegram",
+      "fields": [
         {
-          id: 'crush_name',
-          label: 'Recipient / Crush Name (Yang Ditembak)',
-          type: 'text',
-          placeholder: 'e.g. khayr meschach / soren',
-          defaultValue: 'khayr meschach',
-          required: true,
-          helpText: 'Nama pasangan/crush yang menerima website.'
+          "id": "crush_name",
+          "label": "crush / recipient name",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. meona",
+          "description": "Nama panggilan crush/pasangan"
         },
         {
-          id: 'your_name',
-          label: 'Sender / Your Name (Yang Nembak / Menyatakan Perasaan)',
-          type: 'text',
-          placeholder: 'e.g. ducok letger',
-          defaultValue: 'ducok letger',
-          required: true,
-          helpText: 'Nama pengirim/pembuat website.'
+          "id": "sender_name",
+          "label": "sender / your name",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. kinsley",
+          "description": "Nama pengirim"
         },
         {
-          id: 'telegram_username',
-          label: 'Telegram Username (Tanpa @)',
-          type: 'text',
-          placeholder: 'e.g. ponod / mirssy',
-          defaultValue: 'ponod',
-          required: true,
-          helpText: 'Username Telegram tujuan saat pasangan menekan tombol jawaban.'
+          "id": "confession_date",
+          "label": "confession date stamp",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. february 04, 2026",
+          "description": "Tanggal penembakan / confession"
         },
         {
-          id: 'date_stamp',
-          label: 'Date Stamp Formatted',
-          type: 'text',
-          placeholder: 'e.g. september 19, 2026',
-          defaultValue: 'september 19, 2026',
-          required: true,
-          helpText: 'Tanggal yang tercetak pada kartu arsip.'
+          "id": "reply_username",
+          "label": "telegram username for crush reply",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. @mirssy (username telegram buyer)",
+          "description": "Username Telegram pemesan untuk menerima pesan jawaban dari crush"
         }
       ]
     },
     {
-      id: 'opening_view',
-      number: '03',
-      title: 'Opening Screen (Zipped Archive Cover)',
-      description: 'Front cover greeting and unzipping button.',
-      fields: [
+      "id": "sec_step0",
+      "title": "Step 0: Opening Screen",
+      "subtitle": "layar pembuka sebelum folder diekstrak",
+      "fields": [
         {
-          id: 'open_greeting',
-          label: 'Opening Greeting Heading',
-          type: 'text',
-          placeholder: 'e.g. hey, soren.',
-          defaultValue: 'hey, soren.',
-          required: true
+          "id": "s0_salutation",
+          "label": "opening greeting headline",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. hey, meona.",
+          "description": "Kalimat sapaan pertama"
         },
         {
-          id: 'open_subtext',
-          label: 'Opening Subtitle Quote',
-          type: 'textarea',
-          placeholder: 'e.g. i put my honest thoughts into this archive.',
-          defaultValue: 'i put my honest thoughts into this archive.',
-          required: true
+          "id": "s0_subtitle",
+          "label": "opening subtitle text",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. i made this little space because my feelings for you couldn't be kept in a simple text message.",
+          "description": "Teks sub-pembuka"
         },
         {
-          id: 'open_button_text',
-          label: 'Unzip Button Label',
-          type: 'text',
-          placeholder: 'e.g. unzip feelings.zip',
-          defaultValue: 'unzip feelings.zip',
-          required: true
+          "id": "s0_button",
+          "label": "opening action button text",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. come take a look",
+          "description": "Teks tombol buka folder"
+        },
+        {
+          "id": "s0_footer",
+          "label": "opening footer text",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. for meona from kinsley with all my heart",
+          "description": "Footer layar pembuka"
         }
       ]
     },
     {
-      id: 'buildup_drawers',
-      number: '04',
-      title: 'Build-Up Drawers (3 Interactive Reasons)',
-      description: '3 interactive question drawers (Who, Since when, Why) that reveal romantic thoughts.',
-      fields: [
+      "id": "sec_step1",
+      "title": "Step 1: The Build Up (Interactive Reveal Pills)",
+      "subtitle": "3 pil interaktif yang bisa diklik untuk memunculkan jawaban",
+      "fields": [
         {
-          id: 'buildup_heading',
-          label: 'Section Heading',
-          type: 'textarea',
-          placeholder: 'e.g. there is one name that never stops filling every heartbeat and thought of mine',
-          defaultValue: 'there is one name that never stops filling every heartbeat and thought of mine',
-          required: true
+          "id": "s1_headline",
+          "label": "section headline",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. there is one name that never stops filling every corner of my mind lately.",
+          "description": "Headline pembuka section ini"
         },
         {
-          id: 'buildup_who',
-          label: 'Drawer 01: Who? (Answer Text)',
-          type: 'textarea',
-          placeholder: 'e.g. you, soren. in a world full of billions of souls, you are the only one who makes my heart race and feel safe all at once.',
-          defaultValue: 'you, soren. in a world full of billions of souls, you are the only one who makes my heart race and feel safe all at once.',
-          required: true
+          "id": "s1_pill1_title",
+          "label": "pill 01 question",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. who is it?",
+          "description": "Judul pil 1"
         },
         {
-          id: 'buildup_since',
-          label: 'Drawer 02: Since When? (Answer Text)',
-          type: 'textarea',
-          placeholder: 'e.g. since the very moment our stories intertwined. i don\'t know the exact second it happened...',
-          defaultValue: 'since the very moment our stories intertwined. i don\'t know the exact second it happened, but somewhere along our late-night talks and shared smiles, you became my favorite thought, my safest place, and the person i never want to lose.',
-          required: true
+          "id": "s1_pill1_ans",
+          "label": "pill 01 revealed answer",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. you, meona. in a world full of billions, my eyes keep looking for you.",
+          "description": "Jawaban yang muncul saat pil 1 diklik"
         },
         {
-          id: 'buildup_why',
-          label: 'Drawer 03: Why? (Answer Text)',
-          type: 'textarea',
-          placeholder: 'e.g. because the gentle warmth in your eyes, your soft laugh, and the breathtaking way you are simply yourself make every moment with you feel like magic.',
-          defaultValue: 'because the gentle warmth in your eyes, your soft laugh, and the breathtaking way you are simply yourself make every moment with you feel like magic.',
-          required: true
+          "id": "s1_pill2_title",
+          "label": "pill 02 question",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. since when?",
+          "description": "Judul pil 2"
         },
         {
-          id: 'buildup_button_text',
-          label: 'Advance Button Label',
-          type: 'text',
-          placeholder: 'e.g. open confession cards',
-          defaultValue: 'open confession cards',
-          required: true
+          "id": "s1_pill2_ans",
+          "label": "pill 02 revealed answer",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. since the very moment our stories intertwined. i don't know the exact second it happened, but suddenly you were everywhere in my thoughts.",
+          "description": "Jawaban yang muncul saat pil 2 diklik"
+        },
+        {
+          "id": "s1_pill3_title",
+          "label": "pill 03 question",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. why you?",
+          "description": "Judul pil 3"
+        },
+        {
+          "id": "s1_pill3_ans",
+          "label": "pill 03 revealed answer",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. because the gentle warmth in your eyes and the quiet peace you bring into my life is something i never want to lose.",
+          "description": "Jawaban yang muncul saat pil 3 diklik"
+        },
+        {
+          "id": "s1_button",
+          "label": "continue button text",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. there are sweet things i want to show you",
+          "description": "Teks tombol lanjut ke kartu foto"
         }
       ]
     },
     {
-      id: 'confession_cards',
-      number: '05',
-      title: '4 Swipeable Confession Photocards',
-      description: '4 aesthetic photocards with front headlines, revealed secret letters, and photo captions.',
-      fields: [
+      "id": "sec_step2",
+      "title": "Step 2: Confession Cards (4 Swipeable Cards)",
+      "subtitle": "4 kartu foto pop-up dengan prompt depan, pesan rahasia, dan caption foto",
+      "fields": [
         {
-          id: 'cards_heading',
-          label: 'Cards Section Heading',
-          type: 'text',
-          placeholder: 'e.g. little things that made me fall for you',
-          defaultValue: 'little things that made me fall for you',
-          required: true
+          "id": "s2_headline",
+          "label": "cards section headline",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. for you, my girl. a tiny corner of the universe where every pixel speaks about us.",
+          "description": "Headline di atas kartu"
         },
         {
-          id: 'card1_front',
-          label: 'Card 01 Front Title',
-          type: 'text',
-          placeholder: 'e.g. the way you look at me',
-          defaultValue: 'the way you look at me',
-          required: true
+          "id": "s2_card1_front",
+          "label": "card 01 front prompt",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. the way you look at me",
+          "description": "Teks depan kartu 1"
         },
         {
-          id: 'card1_revealed',
-          label: 'Card 01 Revealed Secret Letter',
-          type: 'textarea',
-          placeholder: 'e.g. every time our eyes meet, the whole world turns quiet. your gaze carries a gentle warmth that makes me feel seen, cherished, and endlessly in love with you.',
-          defaultValue: 'every time our eyes meet, the whole world turns quiet. your gaze carries a gentle warmth that makes me feel seen, cherished, and endlessly in love with you.',
-          required: true
+          "id": "s2_card1_revealed",
+          "label": "card 01 revealed message (pop-up)",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. every time our eyes meet, the whole world seems to fade away into soft silence.",
+          "description": "Pesan rahasia pop-up kartu 1"
         },
         {
-          id: 'card1_photo_caption',
-          label: 'Card 01 Photo Caption',
-          type: 'text',
-          placeholder: 'e.g. the one who brightens my entire universe',
-          defaultValue: 'the one who brightens my entire universe',
-          required: true
+          "id": "s2_card1_tag",
+          "label": "card 01 photo caption tag",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. the girl who brightens my entire universe",
+          "description": "Caption foto kartu 1"
         },
         {
-          id: 'card2_front',
-          label: 'Card 02 Front Title',
-          type: 'text',
-          placeholder: 'e.g. your voice, my comfort',
-          defaultValue: 'your voice, my comfort',
-          required: true
+          "id": "s2_card2_front",
+          "label": "card 02 front prompt",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. your voice, my comfort",
+          "description": "Teks depan kartu 2"
         },
         {
-          id: 'card2_revealed',
-          label: 'Card 02 Revealed Secret Letter',
-          type: 'textarea',
-          placeholder: 'e.g. hearing you talk about your day, laughing at the sillies, and sharing soft whispers...',
-          defaultValue: 'hearing you talk about your day, laughing at the sillies, and sharing soft whispers... your voice has become the sweetest melody my heart craves every single day.',
-          required: true
+          "id": "s2_card2_revealed",
+          "label": "card 02 revealed message (pop-up)",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. hearing you talk about your day is genuinely the highlight of my every evening.",
+          "description": "Pesan rahasia pop-up kartu 2"
         },
         {
-          id: 'card2_photo_caption',
-          label: 'Card 02 Photo Caption',
-          type: 'text',
-          placeholder: 'e.g. falling for every little smile of yours',
-          defaultValue: 'falling for every little smile of yours',
-          required: true
+          "id": "s2_card2_tag",
+          "label": "card 02 photo caption tag",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. falling for every little smile of yours",
+          "description": "Caption foto kartu 2"
         },
         {
-          id: 'card3_front',
-          label: 'Card 03 Front Title',
-          type: 'text',
-          placeholder: 'e.g. walking hand in hand',
-          defaultValue: 'walking hand in hand',
-          required: true
+          "id": "s2_card3_front",
+          "label": "card 03 front prompt",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. walking hand in hand",
+          "description": "Teks depan kartu 3"
         },
         {
-          id: 'card3_revealed',
-          label: 'Card 03 Revealed Secret Letter',
-          type: 'textarea',
-          placeholder: 'e.g. i don\'t just want sweet moments right now; i want to hold your hand through the stormy rains and sunny mornings...',
-          defaultValue: 'i don\'t just want sweet moments right now; i want to hold your hand through the stormy rains and sunny mornings, cheering for you and loving you through every chapter.',
-          required: true
+          "id": "s2_card3_revealed",
+          "label": "card 03 revealed message (pop-up)",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. i don't just want sweet moments right now; i want to hold your hand through the stormy rains and sunny mornings.",
+          "description": "Pesan rahasia pop-up kartu 3"
         },
         {
-          id: 'card3_photo_caption',
-          label: 'Card 03 Photo Caption',
-          type: 'text',
-          placeholder: 'e.g. softest heartbeat in a noisy world',
-          defaultValue: 'softest heartbeat in a noisy world',
-          required: true
+          "id": "s2_card3_tag",
+          "label": "card 03 photo caption tag",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. softest heartbeat in a noisy world",
+          "description": "Caption foto kartu 3"
         },
         {
-          id: 'card4_front',
-          label: 'Card 04 Front Title',
-          type: 'text',
-          placeholder: 'e.g. why my heart chooses you',
-          defaultValue: 'why my heart chooses you',
-          required: true
+          "id": "s2_card4_front",
+          "label": "card 04 front prompt",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. why my heart chooses you",
+          "description": "Teks depan kartu 4"
         },
         {
-          id: 'card4_revealed',
-          label: 'Card 04 Revealed Secret Letter',
-          type: 'textarea',
-          placeholder: 'e.g. out of all the paths in this universe, finding you is my greatest blessing...',
-          defaultValue: 'out of all the paths in this universe, finding you is my greatest blessing. with you, love feels tender, effortless, and true. you are my favorite person, soren.',
-          required: true
+          "id": "s2_card4_revealed",
+          "label": "card 04 revealed message (pop-up)",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. out of all the paths i could take in life, the only one that feels like home is walking beside you.",
+          "description": "Pesan rahasia pop-up kartu 4"
         },
         {
-          id: 'card4_photo_caption',
-          label: 'Card 04 Photo Caption',
-          type: 'text',
-          placeholder: 'e.g. "i want to spend all my tomorrows by your side"',
-          defaultValue: '"i want to spend all my tomorrows by your side"',
-          required: true
+          "id": "s2_card4_tag",
+          "label": "card 04 photo caption tag",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. i want to spend all my tomorrows by your side",
+          "description": "Caption foto kartu 4"
         },
         {
-          id: 'cards_button_text',
-          label: 'Question Button Label',
-          type: 'text',
-          placeholder: 'e.g. the question',
-          defaultValue: 'the question',
-          required: true
+          "id": "s2_button",
+          "label": "continue button text",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. and now, the only thing left in my heart...",
+          "description": "Teks tombol lanjut ke the big question"
         }
       ]
     },
     {
-      id: 'proposal_screen',
-      number: '06',
-      title: 'Proposal Question & Answers',
-      description: 'The big proposal question, custom Yes/No clipboard messages, and celebration outcome.',
-      fields: [
+      "id": "sec_step3",
+      "title": "Step 3: The Big Question",
+      "subtitle": "pertanyaan penembakan / ajakan pacaran & teks tombol",
+      "fields": [
         {
-          id: 'question_heading',
-          label: 'Proposal Question Heading',
-          type: 'textarea',
-          placeholder: 'e.g. soren, will you be mine and walk beside me as my boyfriend, forever?',
-          defaultValue: 'soren, will you be mine and walk beside me as my boyfriend, forever?',
-          required: true
+          "id": "s3_question",
+          "label": "confession big question text",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. meona, will you be mine and walk this journey together as my girlfriend?",
+          "description": "Pertanyaan utama confession"
         },
         {
-          id: 'yes_button_text',
-          label: 'Yes Button Label',
-          type: 'text',
-          placeholder: 'e.g. yes, absolutely!',
-          defaultValue: 'yes, absolutely!',
-          required: true
+          "id": "s3_yes_btn",
+          "label": "yes button text",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. yes, with all my heart",
+          "description": "Teks tombol 'Yes'"
         },
         {
-          id: 'copy_message_yes',
-          label: 'Yes Auto-Copied Message (Dikirim ke Telegram)',
-          type: 'textarea',
-          placeholder: 'e.g. yes, ducok... i want to be your boyfriend and love you forever',
-          defaultValue: 'yes, ducok... i want to be your boyfriend and love you forever',
-          required: true
+          "id": "s3_no_btn",
+          "label": "no button text",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. no, not yet",
+          "description": "Teks tombol 'No'"
+        }
+      ]
+    },
+    {
+      "id": "sec_step4",
+      "title": "Step 4: Responses (Yes & No Screens)",
+      "subtitle": "layar jawaban 'Yes' dan 'No' beserta pesan auto-copy Telegram",
+      "fields": [
+        {
+          "id": "s4_yes_headline",
+          "label": "yes screen giant headline",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. you just made me the happiest person alive!",
+          "description": "Headline besar saat dia memilih Yes"
         },
         {
-          id: 'no_button_text',
-          label: 'No Button Label',
-          type: 'text',
-          placeholder: 'e.g. let me think',
-          defaultValue: 'let me think',
-          required: true
+          "id": "s4_yes_letter",
+          "label": "yes screen heartfelt prose",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. from this day forward, i promise to cherish your smile, hold your hand through everything, and love you more each day.",
+          "description": "Surat cinta penutup pada layar Yes"
         },
         {
-          id: 'copy_message_no',
-          label: 'No Auto-Copied Message',
-          type: 'textarea',
-          placeholder: 'e.g. ducok, i read everything in your heart... let\'s talk',
-          defaultValue: 'ducok, i read everything in your heart... let\'s talk',
-          required: true
+          "id": "s4_yes_copy_msg",
+          "label": "yes auto-copy telegram message",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. yes, kinsley! i'd love to be your girlfriend <3",
+          "description": "Pesan yang otomatis disalin saat dia klik kirim jawaban Yes ke Telegram"
         },
         {
-          id: 'yes_outcome_heading',
-          label: 'Yes Celebration Heading',
-          type: 'text',
-          placeholder: 'e.g. you just made me the happiest person in the entire world.',
-          defaultValue: 'you just made me the happiest person in the entire world.',
-          required: true
+          "id": "s4_no_lead",
+          "label": "no screen headline",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. nice try, but i'm not letting you slip away that easily :)",
+          "description": "Headline bersahabat saat dia memilih No"
+        },
+        {
+          "id": "s4_no_letter",
+          "label": "no screen respectful prose",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. my feelings for you are true, gentle, and patient. whenever you are ready, i will still be right here.",
+          "description": "Surat penutup pada layar No"
+        },
+        {
+          "id": "s4_no_copy_msg",
+          "label": "no auto-copy telegram message",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "e.g. kinsley, i read everything in your heart... let's talk :)",
+          "description": "Pesan yang otomatis disalin saat dia klik kirim jawaban No ke Telegram"
         }
       ]
     }
