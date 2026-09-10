@@ -121,8 +121,8 @@ window.FORM_CONFIG = {
           id: 'buildup_since',
           label: 'Drawer 02: Since When? (Answer Text)',
           type: 'textarea',
-          placeholder: 'e.g. since the very moment our stories intertwined. i don't know the exact second it happened...',
-          defaultValue: 'since the very moment our stories intertwined. i don't know the exact second it happened, but somewhere along our late-night talks and shared smiles, you became my favorite thought, my safest place, and the person i never want to lose.',
+          placeholder: 'e.g. since the very moment our stories intertwined. i don\'t know the exact second it happened...',
+          defaultValue: 'since the very moment our stories intertwined. i don\'t know the exact second it happened, but somewhere along our late-night talks and shared smiles, you became my favorite thought, my safest place, and the person i never want to lose.',
           required: true
         },
         {
@@ -217,8 +217,8 @@ window.FORM_CONFIG = {
           id: 'card3_revealed',
           label: 'Card 03 Revealed Secret Letter',
           type: 'textarea',
-          placeholder: 'e.g. i don't just want sweet moments right now; i want to hold your hand through the stormy rains and sunny mornings...',
-          defaultValue: 'i don't just want sweet moments right now; i want to hold your hand through the stormy rains and sunny mornings, cheering for you and loving you through every chapter.',
+          placeholder: 'e.g. i don\'t just want sweet moments right now; i want to hold your hand through the stormy rains and sunny mornings...',
+          defaultValue: 'i don\'t just want sweet moments right now; i want to hold your hand through the stormy rains and sunny mornings, cheering for you and loving you through every chapter.',
           required: true
         },
         {
@@ -305,8 +305,8 @@ window.FORM_CONFIG = {
           id: 'copy_message_no',
           label: 'No Auto-Copied Message',
           type: 'textarea',
-          placeholder: 'e.g. ducok, i read everything in your heart... let's talk',
-          defaultValue: 'ducok, i read everything in your heart... let's talk',
+          placeholder: 'e.g. ducok, i read everything in your heart... let\'s talk',
+          defaultValue: 'ducok, i read everything in your heart... let\'s talk',
           required: true
         },
         {
