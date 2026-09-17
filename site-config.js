@@ -45,7 +45,7 @@ window.FORM_CONFIG = {
         {
           "key": "reply_username",
           "label": "telegram username for crush reply",
-          "placeholder": "contoh: mirssy (username telegram buyer tanpa @)",
+          "placeholder": "contoh: reeumen (username telegram buyer tanpa @)",
           "long": false,
           "required": false
         }
